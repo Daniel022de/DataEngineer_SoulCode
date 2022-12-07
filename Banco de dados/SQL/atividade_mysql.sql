@@ -4,7 +4,8 @@ Esse Notepad é sobre uma tarefa proposta pelo professor Bismark William no boot
 A proposta visando a consolidação de conhecimentos em SQL foi a seguinte:
 
  
-Crie uma database (loja) com 4 tabelas (clientes,compras,produtos,compras_contem_produtos) , preencha as tabelas com dados aleatórios e faça as seguintes consultas:
+Crie uma database (loja) com 4 tabelas (clientes,compras,produtos,compras_contem_produtos)
+preencha as tabelas com dados aleatórios e faça as seguintes consultas:
 
 1 - Mostrar todos os dados de Clientes					
 2 - Mostrar nome, rg e telefone dos Clientes					
