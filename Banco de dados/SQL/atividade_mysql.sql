@@ -193,11 +193,16 @@ SELECT * FROM produtos ORDER BY nomes_prod ASC;
 9) Mostrar o nome e o valor total da compra realizada pela cliente Mariah Jaqueline Aparício
 
 
-SELECT clientes.nome_cli, SUM(compras.valor_compra) AS valor_compras, produtos.nome_prod FROM compras_contem_produtos INNER JOIN produtos ON compras_contem_produtos.id_prod = produtos.id_prod
-INNER JOIN compras ON compras_contem_produtos.id_compra = compras.id_compra
-INNER JOIN clientes  WHERE clientes.id_cli= 4;
+- 1º LISTA DAS COMPRAS
 
+SELECT clientes.nome_cli, produtos.nome_prod 
+FROM compras_contem_produtos 
+INNER JOIN produtos ON produtos.id_prod = compras_contem_produtos.id_prod
+INNER JOIN compras ON compras.id_compra =  compras_contem_produtos.id_compra 
+INNER JOIN clientes  ON clientes.id_cli = compras.id_cli
+WHERE clientes.nome_cli = 'Mariah Jaqueline Aparício';
 
+- 2º TOTAL DAS COMPRAS
 
 SELECT clientes.nome_cli, SUM(compras.valor_compra)  AS valor_compras
 FROM  compras INNER JOIN clientes
@@ -227,9 +232,12 @@ SELECT * FROM produtos ORDER BY preco_prod ASC;
 13) Mostrar uma lista dos produtos que foram comprados pelo cliente Benedito Henry Teixeira, bem como seu nome e endereço completo.				
 
 
-SELECT clientes.nome_cli, clientes.rua, produtos.nome_prod FROM compras_contem_produtos INNER JOIN produtos ON compras_contem_produtos.id_prod = produtos.id_prod
+SELECT clientes.nome_cli, clientes.rua, clientes.num,clientes.bairro,clientes.estado,clientes.cep, produtos.nome_prod 
+FROM compras_contem_produtos INNER JOIN produtos ON compras_contem_produtos.id_prod = produtos.id_prod
 INNER JOIN compras ON compras_contem_produtos.id_compra = compras.id_compra
-INNER JOIN clientes  WHERE clientes.id_cli= 3;
+INNER JOIN clientes  ON clientes.id_cli = compras.id_cli
+WHERE clientes.nome_cli = 'Benedito Henry Teixeira';
+
 
 
 14) Mostrar a quantidade de clientes que são do estado do CE.
