@@ -187,7 +187,7 @@ SELECT SUM(valor_compra) AS soma_compras FROM compras;
 8) Mostrar todos os produtos ordenados pelo nome (A-Z)
 
 
-SELECT * FROM produtos ORDER BY nomes_prod ASC;
+SELECT nome_prod FROM produtos ORDER BY nomes_prod ASC;
 
 					
 9) Mostrar o nome e o valor total da compra realizada pela cliente Mariah Jaqueline Aparício
